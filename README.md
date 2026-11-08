@@ -12,7 +12,7 @@ A per-frame chance then converts into a match-win chance for any match length:
 P(win first-to-N) = Σ_k  C(N−1+k, k) · pᴺ · (1−p)ᵏ     for k = 0 … N−1
 ```
 
-That matters in snooker. A player who wins 45% of frames against a stronger opponent wins about 41% of best-of-7 matches, but only about 28% of best-of-35s.
+That matters in snooker. A player who wins 45% of frames against a stronger opponent wins about 39% of best-of-7 matches, but only about 28% of best-of-35s.
 
 ## What's here
 
