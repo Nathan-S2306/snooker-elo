@@ -1,0 +1,57 @@
+name: Update data and ratings
+
+on:
+  workflow_dispatch:
+    inputs:
+      from_season:
+        description: "First season to download (e.g. 2010)"
+        default: "2010"
+  schedule:
+    - cron: "41 6 * * *"   # daily
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the snooker.org header is set
+        id: check
+        env:
+          SNOOKER_ORG_HEADER: ${{ secrets.SNOOKER_ORG_HEADER }}
+        run: |
+          if [ -z "$SNOOKER_ORG_HEADER" ]; then
+            echo "No SNOOKER_ORG_HEADER secret yet - skipping until snooker.org grants access."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Download results
+        if: steps.check.outputs.ready == 'true'
+        env:
+          SNOOKER_ORG_HEADER: ${{ secrets.SNOOKER_ORG_HEADER }}
+        run: python src/fetch_data.py --from-season "${{ inputs.from_season || '2010' }}"
+      - name: Build ratings
+        if: steps.check.outputs.ready == 'true'
+        run: python src/elo.py
+      - name: Commit
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          git config user.name "data-bot"
+          git config user.email "data-bot@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update data and ratings"
+            git pull --rebase
+            git push
+          fi
