@@ -21,6 +21,7 @@ import csv
 import datetime as dt
 import json
 import os
+import time as _time
 import sys
 import time
 import urllib.parse
@@ -31,7 +32,12 @@ BASE = "https://api.snooker.org/"
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 DATA = ROOT / "data"
-PAUSE_SECONDS = 2.0   # be polite: one request every couple of seconds
+PAUSE_SECONDS = 32.0  # snooker.org allows 2 requests per minute; stay just under it
+DEADLINE = None       # set from --max-minutes; stop starting new requests after this
+
+
+class TimeUp(Exception):
+    """Raised when this run's time budget is used up; the next run carries on from the cache."""
 
 
 def get(params: dict, cache_name: str | None = None, refresh: bool = False):
@@ -39,6 +45,8 @@ def get(params: dict, cache_name: str | None = None, refresh: bool = False):
     path = RAW / f"{cache_name}.json" if cache_name else None
     if path and path.exists() and not refresh:
         return json.loads(path.read_text())
+    if DEADLINE and _time.monotonic() > DEADLINE:
+        raise TimeUp()
     header = os.environ.get("SNOOKER_ORG_HEADER")
     if not header:
         sys.exit("Set SNOOKER_ORG_HEADER to the value agreed with snooker.org.")
@@ -50,7 +58,7 @@ def get(params: dict, cache_name: str | None = None, refresh: bool = False):
                 data = json.load(r)
             break
         except Exception as exc:
-            wait = PAUSE_SECONDS * (attempt + 2) ** 2
+            wait = 60 * (attempt + 1)   # back off a full minute or more
             print(f"  retrying {params} after error: {exc} (waiting {wait:.0f}s)", file=sys.stderr)
             time.sleep(wait)
     else:
@@ -91,28 +99,54 @@ def match_date(m: dict, ev: dict) -> str:
 
 def main():
     import argparse
+    global DEADLINE
     ap = argparse.ArgumentParser()
     ap.add_argument("--from-season", type=int, default=2010)
+    ap.add_argument("--max-minutes", type=float, default=0,
+                    help="stop after this long and save progress (0 = no limit)")
     args = ap.parse_args()
+    if args.max_minutes:
+        DEADLINE = _time.monotonic() + args.max_minutes * 60
+    try:
+        complete = collect(args.from_season)
+    except TimeUp:
+        complete = False
+    (DATA / "download_complete").write_text("yes\n" if complete else "no\n")
+    print("Download complete." if complete else "Time budget used up - the next run will carry on from the cache.")
 
+
+def collect(from_season):
     today = dt.date.today()
     season_now = current_season(today)
     events, matches, players = [], [], {}
+    try:
+        _collect(from_season, today, season_now, events, matches, players)
+    finally:
+        write_csvs(events, matches, players)
+    return True
 
-    for season in range(args.from_season, season_now + 1):
+
+def _collect(from_season, today, season_now, events, matches, players):
+
+    for season in range(from_season, season_now + 1):
         evs = get({"t": 5, "s": season}, f"events_{season}", refresh=(season == season_now))
         evs = [e for e in evs if is_main_tour_snooker(e)]
         print(f"Season {season}: {len(evs)} main-tour events")
         for ev in evs:
             events.append(ev)
+            if str(ev.get("StartDate", ""))[:10] > today.isoformat():
+                continue                                          # not started: no results yet
             done = event_finished(ev, today)
             ms = get({"t": 6, "e": ev["ID"]}, f"matches_{ev['ID']}", refresh=not done)
             for m in ms or []:
                 s1, s2 = int(m.get("Score1") or 0), int(m.get("Score2") or 0)
                 p1, p2 = m.get("Player1ID"), m.get("Player2ID")
-                if m.get("Unfinished") or not p1 or not p2 or (s1 == 0 and s2 == 0):
+                status = m.get("Status")
+                if status is not None and int(status) != 3:      # 3 = finished
                     continue
-                if int(m.get("WinnerID") or 0) == 0:
+                if int(m.get("Type") or 1) != 1:                  # 1 = standard one-on-one
+                    continue
+                if not p1 or not p2 or (s1 == 0 and s2 == 0) or int(m.get("WinnerID") or 0) == 0:
                     continue
                 walkover = bool(m.get("Walkover1") or m.get("Walkover2"))
                 matches.append({
@@ -129,6 +163,9 @@ def main():
             players[str(pl["ID"])] = {"player_id": pl["ID"], "name": name,
                                       "nationality": pl.get("Nationality", "")}
 
+
+
+def write_csvs(events, matches, players):
     DATA.mkdir(exist_ok=True)
     matches.sort(key=lambda m: (m["date"], m["event_id"], m["match_id"]))
     with open(DATA / "matches.csv", "w", newline="") as f:

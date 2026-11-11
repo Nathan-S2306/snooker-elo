@@ -18,7 +18,7 @@ That matters in snooker. A player who wins 45% of frames against a stronger oppo
 
 | File | What it does |
 |---|---|
-| `src/fetch_data.py` | Downloads results from the [snooker.org](https://snooker.org) API (cached, polite rate) |
+| `src/fetch_data.py` | Downloads results from the [snooker.org](https://snooker.org) API: cached, resumable, and within their 2-requests-per-minute limit |
 | `src/elo.py` | Builds ratings, evaluates predictions, tunes K |
 | `src/simulate.py` | Monte Carlo tournament simulator: plays a draw thousands of times |
 | `tests/` | Checks the model recovers known skill on simulated data |
