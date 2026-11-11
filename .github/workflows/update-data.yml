@@ -11,6 +11,9 @@ on:
       from_season:
         description: "First season to download"
         default: "2010"
+      max_minutes:
+        description: "Download time budget for this run (minutes)"
+        default: "320"
   schedule:
     - cron: "41 6 * * *"   # daily
 
@@ -46,7 +49,7 @@ jobs:
         if: steps.check.outputs.ready == 'true'
         env:
           SNOOKER_ORG_HEADER: ${{ secrets.SNOOKER_ORG_HEADER }}
-        run: python src/fetch_data.py --from-season "${{ inputs.from_season || '2010' }}" --max-minutes 320
+        run: python src/fetch_data.py --from-season "${{ inputs.from_season || '2010' }}" --max-minutes "${{ inputs.max_minutes || '320' }}"
       - name: Build ratings
         if: steps.check.outputs.ready == 'true'
         run: |
