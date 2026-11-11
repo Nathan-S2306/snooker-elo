@@ -103,10 +103,22 @@ def evaluate(matches, model: FrameElo, start_index: int = 0):
     return (ll / n if n else float("nan"), correct / n if n else float("nan"), n)
 
 
+# snooker.org round codes, in the order they're played (see api.snooker.org/help.html)
+ROUND_ORDER = {c: i for i, c in enumerate([1, 2, 3, 4, 5, 6, 20, 21, 19, 16, 7, 8, 9, 10, 11, 12, 13, 14, 18, 15])}
+
+
+def _round_rank(r) -> int:
+    try:
+        return ROUND_ORDER.get(int(r), 50)
+    except (TypeError, ValueError):
+        return 50
+
+
 def load_matches(path: Path):
     with open(path, newline="") as f:
         rows = [r for r in csv.DictReader(f) if r.get("walkover", "0") in ("0", "", "False")]
-    rows.sort(key=lambda r: (r["date"], r.get("event_id", ""), r.get("match_id", "")))
+    # date first, then round, so a final is never rated before its semi-finals
+    rows.sort(key=lambda r: (r["date"], _round_rank(r.get("round")), r.get("event_id", "")))
     return rows
 
 
