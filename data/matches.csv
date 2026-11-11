@@ -1,0 +1,395 @@
+match_id,event_id,event_name,event_type,season,date,round,p1,p2,s1,s2,frames_to_win,walkover
+79,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,15,1,2,4,0,4,0
+80,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,14,1,3,4,3,4,0
+81,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,14,2,4,4,1,4,0
+82,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,13,3,5,4,0,4,0
+83,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,13,1,6,4,3,4,0
+84,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,13,4,7,4,2,4,0
+85,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,13,2,8,4,2,4,0
+86,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,5,9,4,1,4,0
+87,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,3,10,4,2,4,0
+88,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,6,11,4,2,4,0
+89,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,1,12,4,0,4,0
+90,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,4,13,4,2,4,0
+91,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,7,14,4,1,4,0
+92,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,8,15,4,3,4,0
+93,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,10,2,16,4,3,4,0
+94,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,5,17,4,3,4,0
+95,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,9,18,4,2,4,0
+96,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,10,19,4,3,4,0
+97,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,3,20,4,1,4,0
+98,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,11,21,4,2,4,0
+99,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,6,22,4,2,4,0
+100,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,12,23,4,2,4,0
+101,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,1,24,4,2,4,0
+102,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,13,25,4,2,4,0
+103,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,4,26,4,1,4,0
+104,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,14,27,4,1,4,0
+105,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,7,28,4,1,4,0
+106,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,15,29,4,3,4,0
+107,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,8,30,4,3,4,0
+108,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,16,31,4,2,4,0
+109,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,9,2,32,4,1,4,0
+110,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,5,33,4,0,4,0
+111,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,17,34,4,1,4,0
+112,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,9,35,4,2,4,0
+113,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,18,36,4,3,4,0
+114,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,19,37,4,3,4,0
+115,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,10,38,4,3,4,0
+116,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,20,39,4,3,4,0
+117,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,3,40,4,3,4,0
+118,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,21,41,4,1,4,0
+119,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,11,42,4,1,4,0
+120,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,6,43,4,3,4,0
+121,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,22,44,4,2,4,0
+122,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,12,45,4,2,4,0
+123,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,23,46,4,3,4,0
+124,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,24,47,4,2,4,0
+125,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,1,48,4,2,4,0
+126,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,25,49,4,3,4,0
+127,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,13,50,4,0,4,0
+128,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,4,51,4,2,4,0
+129,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,26,52,4,2,4,0
+130,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,14,53,4,0,4,0
+131,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,27,54,4,2,4,0
+132,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,28,55,4,1,4,0
+133,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,7,56,4,3,4,0
+134,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,29,57,4,3,4,0
+135,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,15,58,4,1,4,0
+136,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,30,59,4,1,4,0
+137,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,8,60,4,3,4,0
+138,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,16,61,4,2,4,0
+139,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,31,62,4,0,4,0
+140,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,32,63,4,2,4,0
+141,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,8,2,64,4,0,4,0
+142,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,5,65,4,1,4,0
+143,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,33,66,4,0,4,0
+144,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,17,67,4,2,4,0
+145,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,34,68,4,3,4,0
+146,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,9,69,4,1,4,0
+147,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,35,70,4,1,4,0
+148,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,18,71,4,1,4,0
+149,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,36,72,4,1,4,0
+150,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,37,73,4,0,4,0
+151,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,19,74,4,2,4,0
+152,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,10,75,4,2,4,0
+153,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,38,76,4,1,4,0
+154,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,20,77,4,1,4,0
+155,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,39,78,4,3,4,0
+156,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,40,79,4,1,4,0
+157,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,3,80,4,1,4,0
+158,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,21,81,4,0,4,0
+159,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,41,82,4,3,4,0
+160,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,11,83,4,2,4,0
+161,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,42,84,4,0,4,0
+162,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,43,85,4,3,4,0
+163,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,6,86,4,3,4,0
+164,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,44,87,4,2,4,0
+165,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,22,88,4,1,4,0
+166,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,45,89,4,3,4,0
+167,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,12,90,4,1,4,0
+168,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,23,91,4,0,4,0
+169,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,46,92,4,3,4,0
+170,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,24,93,4,2,4,0
+171,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,47,94,4,3,4,0
+172,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,1,95,4,0,4,0
+173,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,48,96,4,3,4,0
+174,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,49,97,4,3,4,0
+175,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,25,98,4,0,4,0
+176,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,13,99,4,1,4,0
+177,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,50,100,4,1,4,0
+178,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,4,101,4,0,4,0
+179,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,51,102,4,3,4,0
+180,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,26,103,4,1,4,0
+181,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,52,104,4,0,4,0
+182,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,14,105,4,0,4,0
+183,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,53,106,4,2,4,0
+184,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,27,107,4,0,4,0
+185,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,54,108,4,0,4,0
+186,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,55,109,4,1,4,0
+187,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,28,110,4,2,4,0
+188,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,7,111,4,1,4,0
+189,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,56,112,4,2,4,0
+190,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,57,113,4,0,4,0
+191,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,29,114,4,2,4,0
+192,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,58,115,4,1,4,0
+193,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,15,116,4,3,4,0
+194,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,30,117,4,0,4,0
+195,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,59,118,4,2,4,0
+196,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,60,119,4,2,4,0
+197,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,8,120,4,0,4,0
+198,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,61,121,4,0,4,0
+199,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,16,122,4,3,4,0
+200,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,62,123,4,3,4,0
+201,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,31,124,4,3,4,0
+202,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,32,125,4,2,4,0
+203,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,63,149,4,0,4,0
+204,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,64,127,4,2,4,0
+205,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,7,2,128,4,2,4,0
+207,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,108,131,4,1,4,0
+208,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,109,132,4,2,4,0
+209,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,110,133,4,3,4,0
+210,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,111,134,4,0,4,0
+211,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,112,135,4,2,4,0
+212,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,113,136,4,2,4,0
+213,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,114,137,4,0,4,0
+214,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,58,138,4,1,4,0
+215,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,116,139,4,0,4,0
+216,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,117,140,4,0,4,0
+217,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,59,141,4,1,4,0
+218,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,60,142,4,1,4,0
+219,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,120,143,4,2,4,0
+220,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,121,144,4,3,4,0
+221,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,122,145,4,0,4,0
+222,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,123,146,4,0,4,0
+223,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,124,147,4,1,4,0
+224,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,32,148,4,0,4,0
+226,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,127,151,4,0,4,0
+227,1,Players Tour Championship Event One,Players Tour Championship,2010,2010-08-01,1,128,152,4,0,4,0
+228,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,15,17,6,4,3,4,0
+229,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,14,17,4,4,2,4,0
+230,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,14,6,38,4,1,4,0
+231,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,13,17,93,4,2,4,0
+232,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,13,4,65,4,2,4,0
+233,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,13,6,30,4,2,4,0
+234,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,13,38,22,4,3,4,0
+235,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,17,15,4,1,4,0
+236,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,93,45,4,1,4,0
+237,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,65,37,4,1,4,0
+238,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,4,44,4,2,4,0
+239,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,30,112,4,1,4,0
+240,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,6,21,4,1,4,0
+241,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,38,62,4,2,4,0
+242,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,10,22,2,4,0,4,0
+243,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,15,48,4,1,4,0
+244,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,17,43,4,0,4,0
+245,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,93,11,4,2,4,0
+246,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,45,12,4,2,4,0
+247,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,65,13,4,3,4,0
+248,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,37,34,4,1,4,0
+249,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,44,102,4,3,4,0
+250,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,4,50,4,0,4,0
+251,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,30,3,4,1,4,0
+252,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,112,8,4,3,4,0
+253,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,6,23,4,0,4,0
+254,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,21,27,4,0,4,0
+255,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,62,9,4,1,4,0
+256,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,38,75,4,0,4,0
+257,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,22,31,4,1,4,0
+258,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,9,2,32,4,0,4,0
+259,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,15,1,4,2,4,0
+260,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,48,54,4,1,4,0
+261,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,17,97,4,1,4,0
+262,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,43,40,4,0,4,0
+263,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,11,162,4,1,4,0
+264,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,93,51,4,2,4,0
+265,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,45,7,4,1,4,0
+266,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,12,168,4,1,4,0
+267,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,13,179,4,3,4,0
+268,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,65,10,4,2,4,0
+269,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,34,64,4,1,4,0
+270,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,37,158,4,3,4,0
+271,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,44,79,4,2,4,0
+272,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,102,47,4,1,4,0
+273,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,50,99,4,1,4,0
+274,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,4,59,4,3,4,0
+275,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,3,52,4,3,4,0
+276,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,30,35,4,2,4,0
+277,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,112,61,4,0,4,0
+278,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,8,18,4,1,4,0
+279,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,6,74,4,1,4,0
+280,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,23,63,4,2,4,0
+281,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,21,80,4,2,4,0
+282,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,27,101,4,3,4,0
+283,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,22,36,4,1,4,0
+284,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,62,28,4,2,4,0
+285,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,9,67,4,3,4,0
+286,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,38,46,4,1,4,0
+287,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,75,26,4,3,4,0
+288,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,31,124,4,2,4,0
+289,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,32,58,4,2,4,0
+290,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,8,2,49,4,3,4,0
+355,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,99,117,4,1,4,0
+356,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,72,174,4,2,4,0
+357,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,132,181,4,2,4,0
+358,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,133,114,4,2,4,0
+359,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,130,113,4,1,4,0
+360,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,152,147,4,1,4,0
+361,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,135,182,4,1,4,0
+362,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,131,178,4,0,4,0
+363,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,112,159,4,0,4,0
+364,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,138,167,4,2,4,0
+365,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,169,160,4,0,4,0
+366,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,96,110,4,2,4,0
+367,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,144,150,4,0,4,0
+368,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,74,70,4,1,4,0
+370,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,165,155,4,2,4,0
+371,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,80,127,4,1,4,0
+372,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,71,180,4,2,4,0
+373,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,106,98,4,0,4,0
+374,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,134,141,4,3,4,0
+375,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,156,123,4,0,4,0
+376,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,83,163,4,3,4,0
+377,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,176,105,4,2,4,0
+378,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,67,161,4,3,4,0
+379,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,73,109,4,3,4,0
+380,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,76,172,4,1,4,0
+381,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,82,139,4,3,4,0
+382,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,75,148,4,1,4,0
+383,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,140,146,4,0,4,0
+384,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,94,95,4,2,4,0
+385,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,69,166,4,0,4,0
+386,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,124,137,4,2,4,0
+388,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,142,143,4,3,4,0
+389,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,128,183,4,0,4,0
+390,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,1,107,120,4,3,4,0
+92605,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,1,125,4,3,4,0
+92606,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,15,171,4,0,4,0
+92607,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,54,92,4,0,4,0
+92608,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,48,115,4,2,4,0
+92609,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,17,177,4,0,4,0
+92610,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,97,42,4,2,4,0
+92611,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,43,175,4,2,4,0
+92613,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,162,19,4,2,4,0
+92614,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,11,90,4,2,4,0
+92615,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,93,41,4,1,4,0
+92616,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,51,119,4,2,4,0
+92618,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,45,86,4,3,4,0
+92619,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,12,118,4,2,4,0
+92620,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,168,57,4,0,4,0
+92621,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,179,14,4,2,4,0
+92622,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,13,85,4,3,4,0
+92623,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,10,173,4,1,4,0
+92624,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,65,60,4,2,4,0
+92625,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,34,78,4,3,4,0
+92626,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,64,68,4,1,4,0
+92627,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,158,16,4,3,4,0
+92628,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,37,66,4,1,4,0
+92629,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,79,33,4,2,4,0
+92630,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,44,91,4,1,4,0
+92631,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,102,56,4,1,4,0
+92632,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,47,81,4,0,4,0
+92633,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,99,29,4,3,4,0
+92634,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,50,72,4,0,4,0
+92635,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,4,132,4,2,4,0
+92636,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,59,133,4,1,4,0
+92637,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,3,130,4,2,4,0
+92638,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,52,152,4,1,4,0
+92639,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,35,135,4,2,4,0
+92640,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,30,131,4,2,4,0
+92641,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,112,20,4,3,4,0
+92642,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,61,138,4,0,4,0
+92643,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,8,169,4,0,4,0
+92644,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,18,96,4,3,4,0
+92645,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,6,144,4,0,4,0
+92646,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,74,25,4,2,4,0
+92647,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,23,157,4,0,4,0
+92648,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,63,165,4,3,4,0
+92650,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,21,71,4,1,4,0
+92651,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,101,106,4,3,4,0
+92652,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,27,134,4,3,4,0
+92653,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,28,156,4,0,4,0
+92654,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,62,83,4,0,4,0
+92655,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,9,176,4,0,4,0
+92656,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,67,53,4,3,4,0
+92657,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,46,73,4,0,4,0
+92658,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,38,76,4,3,4,0
+92659,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,26,82,4,3,4,0
+92660,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,75,39,4,2,4,0
+92661,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,22,140,4,1,4,0
+92662,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,36,94,4,2,4,0
+92663,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,31,69,4,2,4,0
+92664,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,124,55,4,1,4,0
+92665,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,32,87,4,3,4,0
+92666,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,58,142,4,0,4,0
+92667,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,49,128,4,3,4,0
+92668,2,Players Tour Championship Event Two,Players Tour Championship,2010,2010-08-01,7,2,107,4,0,4,0
+407,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,53,125,5,1,5,0
+408,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,25,21,5,4,5,0
+409,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,15,216,5,4,5,0
+410,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,12,8,5,1,5,0
+411,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,62,115,5,2,5,0
+412,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,170,63,5,4,5,0
+413,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,212,177,5,0,5,0
+414,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,92,168,5,1,5,0
+415,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,31,103,5,4,5,0
+416,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,30,35,5,2,5,0
+417,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,9,81,5,2,5,0
+418,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,13,10,5,2,5,0
+419,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,54,51,5,0,5,0
+420,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,27,16,5,4,5,0
+421,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,194,38,5,2,5,0
+422,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,4,42,171,5,1,5,0
+423,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,53,78,5,1,5,0
+424,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,21,11,5,3,5,0
+425,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,216,14,5,1,5,0
+426,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,8,29,5,0,5,0
+427,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,115,41,5,3,5,0
+428,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,63,18,5,1,5,0
+429,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,177,6,5,1,5,0
+430,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,92,37,5,4,5,0
+431,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,103,190,5,2,5,0
+432,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,35,193,5,1,5,0
+433,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,81,179,5,3,5,0
+434,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,10,55,5,1,5,0
+435,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,51,44,5,3,5,0
+436,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,27,45,5,3,5,0
+437,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,194,50,5,1,5,0
+438,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,3,171,33,5,1,5,0
+439,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,78,93,5,4,5,0
+440,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,21,47,5,4,5,0
+441,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,216,48,5,4,5,0
+442,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,29,64,5,0,5,0
+443,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,41,24,5,2,5,0
+444,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,18,118,5,4,5,0
+445,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,6,22,5,4,5,0
+446,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,37,7,5,2,5,0
+447,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,190,56,5,3,5,0
+448,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,193,46,5,3,5,0
+449,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,81,173,5,1,5,0
+450,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,10,36,5,2,5,0
+451,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,51,39,5,1,5,0
+452,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,45,20,5,3,5,0
+453,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,194,91,5,2,5,0
+454,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,2,171,204,5,2,5,0
+455,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,78,85,5,3,5,0
+456,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,21,175,5,1,5,0
+457,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,216,57,5,3,5,0
+458,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,29,65,5,2,5,0
+459,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,24,23,5,1,5,0
+460,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,18,79,5,4,5,0
+461,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,22,192,5,4,5,0
+462,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,7,208,5,0,5,0
+463,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,56,86,5,1,5,0
+464,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,46,19,5,3,5,0
+465,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,81,90,5,4,5,0
+466,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,10,102,5,2,5,0
+467,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,39,61,5,2,5,0
+468,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,45,162,5,3,5,0
+469,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,91,119,5,2,5,0
+470,13,Shanghai Masters Qualifiers,Qualifying,2010,2010-08-01,1,171,43,5,2,5,0
+21834,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,2,41,37,0,3,3,0
+21835,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,2,35,14,2,3,3,0
+21837,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,3,37,14,3,4,4,0
+21838,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,1,41,181,2,0,2,0
+21839,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,1,37,205,2,0,2,0
+21840,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,1,35,452,2,0,2,0
+21841,34,World Seniors Championship Qualifiers,Qualifying,2010,2010-08-01,1,14,31,2,0,2,0
+21684,36,Wuxi Classic,Invitational,2010,2010-08-01,7,4,200,5,2,5,0
+21685,36,Wuxi Classic,Invitational,2010,2010-08-01,7,153,24,5,3,5,0
+21686,36,Wuxi Classic,Invitational,2010,2010-08-01,7,68,184,5,4,5,0
+21687,36,Wuxi Classic,Invitational,2010,2010-08-01,7,17,218,3,5,5,0
+21688,36,Wuxi Classic,Invitational,2010,2010-08-01,13,202,4,5,3,5,0
+21689,36,Wuxi Classic,Invitational,2010,2010-08-01,13,97,153,5,1,5,0
+21690,36,Wuxi Classic,Invitational,2010,2010-08-01,13,224,68,5,2,5,0
+21691,36,Wuxi Classic,Invitational,2010,2010-08-01,13,168,218,1,5,5,0
+21694,36,Wuxi Classic,Invitational,2010,2010-08-01,14,202,97,1,6,6,0
+21695,36,Wuxi Classic,Invitational,2010,2010-08-01,14,224,218,6,0,6,0
+539165,36,Wuxi Classic,Invitational,2010,2010-08-01,15,97,224,9,8,9,0
+537891,174,Irish Classic,Invitational,2010,2012-03-12,13,63,498,5,3,5,0
+537892,174,Irish Classic,Invitational,2010,2012-03-12,13,194,777,5,1,5,0
+537893,174,Irish Classic,Invitational,2010,2012-03-12,13,204,427,5,4,5,0
+537894,174,Irish Classic,Invitational,2010,2012-03-12,13,414,190,5,4,5,0
+537897,174,Irish Classic,Invitational,2010,2012-03-12,14,63,194,5,3,5,0
+537898,174,Irish Classic,Invitational,2010,2012-03-12,14,204,414,5,3,5,0
+537900,174,Irish Classic,Invitational,2010,2012-03-12,15,63,204,5,1,5,0
