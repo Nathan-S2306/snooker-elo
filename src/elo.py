@@ -14,6 +14,7 @@ best-of-7 than in a best-of-35.
 from __future__ import annotations
 
 import csv
+import datetime as dt
 import math
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -46,6 +47,7 @@ class FrameElo:
     ratings: dict = field(default_factory=dict)
     played: dict = field(default_factory=lambda: defaultdict(int))
     history: list = field(default_factory=list)
+    last_played: dict = field(default_factory=dict)
 
     def rating(self, player) -> float:
         return self.ratings.get(player, self.initial)
@@ -74,6 +76,8 @@ class FrameElo:
         self.ratings[b] = rb - self._k(b) * surprise
         self.played[a] += 1
         self.played[b] += 1
+        if date:
+            self.last_played[a] = self.last_played[b] = date
         self.history.append((date, match_id, a, b, frames_a, frames_b, ra, rb, expected))
 
     def fit(self, matches):
@@ -166,10 +170,13 @@ def main():
     model = FrameElo(k=args.k).fit(matches)
     with open(args.out, "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["rank", "player_id", "name", "rating", "matches"])
-        ranked = sorted(model.ratings.items(), key=lambda kv: -kv[1])
+        w.writerow(["rank", "player_id", "name", "rating", "matches", "last_played"])
+        # current ratings: players who have played in the last year
+        cutoff = (dt.date.today() - dt.timedelta(days=365)).isoformat()
+        ranked = sorted(((pid, r) for pid, r in model.ratings.items()
+                         if model.last_played.get(pid, "") >= cutoff), key=lambda kv: -kv[1])
         for i, (pid, r) in enumerate(ranked, 1):
-            w.writerow([i, pid, names.get(pid, pid), round(r, 1), model.played[pid]])
+            w.writerow([i, pid, names.get(pid, pid), round(r, 1), model.played[pid], model.last_played.get(pid, "")])
     print(f"Wrote {args.out}. Top 10:")
     for i, (pid, r) in enumerate(ranked[:10], 1):
         print(f"  {i:>2}. {names.get(pid, pid):<25} {r:7.1f}")
