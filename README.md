@@ -1,5 +1,7 @@
 # Snooker Elo
 
+**Live dashboard: https://nathan-s2306.github.io/snooker-elo/**
+
 A frame-based rating system for professional snooker, used to rank players on current form and predict tournaments.
 
 ## Why frame-based?
@@ -20,6 +22,8 @@ That matters in snooker. A player who wins 45% of frames against a stronger oppo
 |---|---|
 | `src/fetch_data.py` | Downloads results from the [snooker.org](https://snooker.org) API: cached, resumable, and within their 2-requests-per-minute limit |
 | `src/elo.py` | Builds ratings, evaluates predictions, tunes K |
+| `analysis/` | Article analyses and charts, plus `build_site.py`, which exports the dashboard data |
+| `docs/` | The dashboard (GitHub Pages), refreshed daily |
 | `src/simulate.py` | Monte Carlo tournament simulator: plays a draw thousands of times |
 | `tests/` | Checks the model recovers known skill on simulated data |
 | `.github/workflows/update-data.yml` | Daily automatic data and ratings refresh |

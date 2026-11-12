@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snooker Elo Ratings</title>
+<meta name="description" content="Frame-based Elo ratings for professional snooker: current ratings, rating history and a head-to-head match predictor. Data from snooker.org.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --surface-0: #f4f3f0;
+  --surface-1: #fcfcfb;
+  --border: #e6e5e1;
+  --grid: #ebeae6;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #7a7974;
+  --accent: #2a78d6;
+  --accent-soft: #e8f0fb;
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --felt: #0f6b3f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #121211;
+    --surface-1: #1a1a19;
+    --border: #2e2e2c;
+    --grid: #262624;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #8e8d86;
+    --accent: #3987e5;
+    --accent-soft: #1d2b3d;
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --felt: #1f8a55;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #121211;
+  --surface-1: #1a1a19;
+  --border: #2e2e2c;
+  --grid: #262624;
+  --text-primary: #f0efec;
+  --text-secondary: #c3c2b7;
+  --text-muted: #8e8d86;
+  --accent: #3987e5;
+  --accent-soft: #1d2b3d;
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --felt: #1f8a55;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--surface-0);
+  color: var(--text-primary);
+  font: 15px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px 48px; }
+header { padding: 40px 0 24px; }
+.eyebrow { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--felt); letter-spacing: .02em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--felt); }
+h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 8px 0 10px; letter-spacing: -.02em; }
+.lede { color: var(--text-secondary); max-width: 680px; margin: 0; }
+.meta { margin-top: 14px; font-size: 13px; color: var(--text-muted); }
+.meta a { color: inherit; }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 20px; }
+.card h2 { font-size: 18px; margin: 0 0 4px; letter-spacing: -.01em; }
+.card .sub { color: var(--text-secondary); font-size: 14px; margin: 0 0 16px; }
+.grid2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 900px) { .grid2 { grid-template-columns: 1.05fr 1fr; } .grid2 > .card { margin-top: 0; } .grid2 { margin-top: 20px; } }
+
+/* controls */
+input[type=search], select {
+  font: inherit; font-size: 14px; color: var(--text-primary); background: var(--surface-1);
+  border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; min-height: 38px; width: 100%;
+}
+input[type=search]:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.row > * { flex: 1 1 160px; }
+button.link { background: none; border: 0; color: var(--accent); font: inherit; font-size: 14px; cursor: pointer; padding: 8px 0; }
+
+/* table */
+.table-wrap { max-height: 560px; overflow: auto; margin-top: 12px; border-top: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th { position: sticky; top: 0; background: var(--surface-1); text-align: left; font-weight: 600; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+td { padding: 9px 8px; border-bottom: 1px solid var(--grid); }
+td.num, th.num { text-align: right; }
+td.rank { color: var(--text-muted); width: 44px; }
+td.name { font-weight: 500; }
+td.nat { color: var(--text-muted); font-size: 13px; }
+.chg { color: var(--text-secondary); white-space: nowrap; }
+.chg .arrow { display: inline-block; width: 1em; text-align: center; }
+tr.pick { cursor: pointer; }
+tr.pick:hover td { background: var(--accent-soft); }
+@media (max-width: 560px) { .hide-sm { display: none; } }
+
+/* chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; min-height: 34px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 999px; padding: 4px 6px 4px 12px; font-size: 13px; font-weight: 500; background: var(--surface-1); }
+.chip .dot { width: 10px; height: 10px; border-radius: 50%; }
+.chip button { border: 0; background: none; color: var(--text-muted); cursor: pointer; font-size: 16px; line-height: 1; padding: 2px 6px; border-radius: 999px; }
+.chip button:hover { background: var(--accent-soft); color: var(--text-primary); }
+.hint { font-size: 12px; color: var(--text-muted); }
+
+/* chart */
+.chart { position: relative; margin-top: 8px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .axis text { fill: var(--text-muted); font-size: 11px; }
+.chart .gridline { stroke: var(--grid); }
+.tip { position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 16px rgba(0,0,0,.12); white-space: nowrap; opacity: 0; transition: opacity .1s; }
+.tip .t { font-weight: 600; margin-bottom: 4px; color: var(--text-primary); }
+.tip .r { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); }
+.tip .r b { color: var(--text-primary); font-weight: 600; margin-left: auto; padding-left: 12px; font-variant-numeric: tabular-nums; }
+
+/* head to head */
+.h2h-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; }
+.vs { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+.result { margin-top: 18px; }
+.split { display: flex; height: 44px; border-radius: 8px; overflow: hidden; gap: 2px; margin: 8px 0; }
+.split div { display: flex; align-items: center; padding: 0 12px; font-weight: 700; font-size: 16px; color: #fff; font-variant-numeric: tabular-nums; min-width: 0; white-space: nowrap; }
+.split .a { background: var(--series-1); }
+.split .b { background: var(--series-2); justify-content: flex-end; }
+.names { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+.stat { background: var(--surface-0); border-radius: 8px; padding: 10px 12px; }
+.stat .k { font-size: 12px; color: var(--text-muted); }
+.stat .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.note { font-size: 13px; color: var(--text-secondary); margin-top: 14px; }
+.lengths { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.lengths button { font: inherit; font-size: 13px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.lengths button[aria-pressed=true] { background: var(--text-primary); color: var(--surface-1); border-color: var(--text-primary); }
+
+/* method */
+details { margin-top: 20px; }
+summary { cursor: pointer; font-weight: 600; }
+.method p { color: var(--text-secondary); max-width: 760px; }
+footer { margin-top: 32px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 16px; }
+footer a { color: inherit; }
+.theme { float: right; background: none; border: 1px solid var(--border); color: var(--text-secondary); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <button class="theme" id="themeBtn" type="button" aria-label="Switch light or dark theme">Theme</button>
+    <div class="eyebrow">Snooker Elo</div>
+    <h1>Who's actually the best snooker player right now?</h1>
+    <p class="lede">The official rankings are based on two years of prize money, so they lag behind form. These ratings update after every match, using the share of frames won and the strength of the opponent.</p>
+    <div class="meta" id="meta">Loading…</div>
+  </header>
+
+  <section class="card" aria-labelledby="t-ratings">
+    <h2 id="t-ratings">Current ratings</h2>
+    <p class="sub">Players active in the last 12 months. Click a player to add them to the chart.</p>
+    <div class="row">
+      <input type="search" id="q" placeholder="Search players or countries" aria-label="Search players">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>Player</th><th class="hide-sm">Country</th>
+          <th class="num">Rating</th><th class="num">12-month change</th><th class="num hide-sm">Matches</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid2">
+    <section class="card" aria-labelledby="t-history">
+      <h2 id="t-history">Rating history</h2>
+      <p class="sub">Compare up to three players since 2012.</p>
+      <select id="addPlayer" aria-label="Add a player to the chart"></select>
+      <div class="chips" id="chips"></div>
+      <div class="chart" id="chart"><div class="tip" id="tip"></div></div>
+      <div class="hint">Ratings at the end of each month a player played. Everyone started at 1500 in 2010, so ratings across the whole field drift up slowly over time.</div>
+    </section>
+
+    <section class="card" aria-labelledby="t-h2h">
+      <h2 id="t-h2h">Head-to-head predictor</h2>
+      <p class="sub">Pick two players and a match length.</p>
+      <div class="h2h-grid">
+        <select id="pa" aria-label="Player one"></select>
+        <span class="vs">v</span>
+        <select id="pb" aria-label="Player two"></select>
+      </div>
+      <div class="lengths" id="lengths" role="group" aria-label="Match length"></div>
+      <div class="result" id="result"></div>
+    </section>
+  </div>
+
+  <details class="card method">
+    <summary>How the ratings work</summary>
+    <p>Each player has a rating that predicts their chance of winning a single frame against a given opponent: a 100-point gap means the stronger player wins about 64% of frames. After each match both ratings move by how far the share of frames won differed from that prediction, scaled up a little for longer matches, because a 10–3 tells us more than a 4–3.</p>
+    <p>A frame-win chance converts into a match-win chance for any length, so the same two players get different odds over best-of-7 and best-of-35. Over longer matches the better player is more likely to win.</p>
+    <p>Shoot Out matches (single frames scored in points) and seniors events are left out. On matches the model hadn't seen yet, it picks the winner about two times in three.</p>
+  </details>
+
+  <footer>
+    Data from <a href="https://snooker.org">snooker.org</a>, used with permission. Thank you to the snooker.org team.
+    · Code on <a href="https://github.com/Nathan-S2306/snooker-elo">GitHub</a>.
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const fmt = (x, d = 0) => Number(x).toLocaleString("en-GB", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const LENGTHS = [[4, "Best of 7"], [5, "Best of 9"], [6, "Best of 11"], [9, "Best of 17"], [10, "Best of 19"], [18, "Best of 35"]];
+  const DEFAULTS = { compare: ["Ronnie O'Sullivan", "John Higgins", "Mark J Williams"], a: "Ronnie O'Sullivan", b: "Neil Robertson" };
+  let S = { ratings: [], byId: {}, byName: {}, history: {}, h2h: {}, meta: {}, picked: [], len: 6 };
+
+  // theme toggle (remembered per browser)
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  $("themeBtn").addEventListener("click", () => {
+    const dark = getComputedStyle(document.documentElement).colorScheme === "dark";
+    const next = dark ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    drawChart();
+  });
+
+  const pFrame = (ra, rb) => 1 / (1 + Math.pow(10, (rb - ra) / (S.meta.scale || 400)));
+  function pMatch(p, n) {
+    let total = 0, c = 1;                        // c = C(n-1+k, k)
+    for (let k = 0; k < n; k++) {
+      if (k > 0) c = c * (n - 1 + k) / k;
+      total += c * Math.pow(p, n) * Math.pow(1 - p, k);
+    }
+    return total;
+  }
+
+  Promise.all(["ratings", "history", "h2h", "meta"].map((f) => fetch(`data/${f}.json`).then((r) => r.json())))
+    .then(([ratings, history, h2h, meta]) => {
+      Object.assign(S, { ratings, history, h2h, meta });
+      ratings.forEach((r) => { S.byId[r.id] = r; S.byName[r.name] = r; });
+      $("meta").innerHTML = `Updated ${new Date(meta.built).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })} · ${fmt(meta.matches)} matches since ${meta.first_season} · latest: ${meta.latest_event}`;
+      initTable(); initCompare(); initH2H();
+    })
+    .catch(() => { $("meta").textContent = "Couldn't load the data. Please refresh."; });
+
+  // ---------- ratings table ----------
+  function initTable() {
+    const render = () => {
+      const q = $("q").value.trim().toLowerCase();
+      const rows = S.ratings.filter((r) => !q || r.name.toLowerCase().includes(q) || r.nationality.toLowerCase().includes(q));
+      $("tbody").innerHTML = rows.map((r) => {
+        const c = r.change_12m;
+        const chg = c == null ? "–" : `<span class="arrow" aria-hidden="true">${c > 0.5 ? "▲" : c < -0.5 ? "▼" : "•"}</span>${c > 0 ? "+" : ""}${fmt(c)}`;
+        return `<tr class="pick" data-id="${r.id}" tabindex="0" title="Add ${r.name} to the chart">
+          <td class="rank">${r.rank}</td><td class="name">${r.name}</td><td class="nat hide-sm">${r.nationality}</td>
+          <td class="num">${fmt(r.rating)}</td><td class="num chg">${chg}</td><td class="num hide-sm">${fmt(r.matches)}</td></tr>`;
+      }).join("") || `<tr><td colspan="6" class="nat">No players match “${q}”.</td></tr>`;
+    };
+    $("q").addEventListener("input", render);
+    const pick = (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) addPlayer(tr.dataset.id, true); };
+    $("tbody").addEventListener("click", pick);
+    $("tbody").addEventListener("keydown", (e) => { if (e.key === "Enter") pick(e); });
+    render();
+  }
+
+  // ---------- rating history ----------
+  function initCompare() {
+    const sel = $("addPlayer");
+    sel.innerHTML = `<option value="">Add a player…</option>` +
+      [...S.ratings].sort((a, b) => a.name.localeCompare(b.name)).map((r) => `<option value="${r.id}">${r.name}</option>`).join("");
+    sel.addEventListener("change", () => { if (sel.value) addPlayer(sel.value); sel.value = ""; });
+    DEFAULTS.compare.forEach((n) => S.byName[n] && addPlayer(S.byName[n].id));
+    let t; window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(drawChart, 120); });
+  }
+  function addPlayer(id, scroll) {
+    if (!S.history[id] || S.picked.includes(id)) return;
+    if (S.picked.length >= 3) S.picked.shift();     // keep at most three; oldest drops off
+    S.picked.push(id);
+    renderChips(); drawChart();
+    if (scroll) $("t-history").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  // colours follow the player, not their position: assign on add, keep until removed
+  const colourOf = {};
+  function renderChips() {
+    const used = new Set(S.picked.map((id) => colourOf[id]).filter(Boolean));
+    Object.keys(colourOf).forEach((id) => { if (!S.picked.includes(id)) delete colourOf[id]; });
+    S.picked.forEach((id) => {
+      if (!colourOf[id]) { const free = [1, 2, 3].find((n) => !Object.values(colourOf).includes(n)); colourOf[id] = free; }
+    });
+    $("chips").innerHTML = S.picked.map((id) => `<span class="chip"><span class="dot" style="background:var(--series-${colourOf[id]})"></span>${S.byId[id].name}<button type="button" data-id="${id}" aria-label="Remove ${S.byId[id].name}">×</button></span>`).join("")
+      || `<span class="hint">Add a player to see their history.</span>`;
+    $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      S.picked = S.picked.filter((x) => x !== b.dataset.id); renderChips(); drawChart();
+    }));
+  }
+  const toDate = (m) => new Date(+m.slice(0, 4), +m.slice(5, 7) - 1, 15);
+  function drawChart() {
+    const box = $("chart"), tip = $("tip");
+    box.querySelectorAll("svg").forEach((s) => s.remove());
+    if (!S.picked.length) return;
+    const css = getComputedStyle(document.documentElement);
+    const W = Math.max(300, box.clientWidth), H = Math.round(Math.min(340, Math.max(240, W * 0.55)));
+    const m = { t: 10, r: 12, b: 26, l: 44 };
+    const series = S.picked.map((id) => ({ id, name: S.byId[id].name, colour: css.getPropertyValue(`--series-${colourOf[id]}`).trim(),
+      pts: S.history[id].map(([mo, r]) => ({ d: toDate(mo), mo, r })) }));
+    const all = series.flatMap((s) => s.pts);
+    const x0 = Math.min(...all.map((p) => p.d)), x1 = Math.max(...all.map((p) => p.d));
+    let y0 = Math.min(...all.map((p) => p.r)), y1 = Math.max(...all.map((p) => p.r));
+    const pad = Math.max(10, (y1 - y0) * 0.08); y0 -= pad; y1 += pad;
+    const X = (d) => m.l + (d - x0) / Math.max(1, x1 - x0) * (W - m.l - m.r);
+    const Y = (r) => m.t + (1 - (r - y0) / (y1 - y0)) * (H - m.t - m.b);
+    const step = [10, 20, 25, 50, 100].find((s) => (y1 - y0) / s <= 6) || 100;
+    let g = "";
+    for (let v = Math.ceil(y0 / step) * step; v <= y1; v += step)
+      g += `<line class="gridline" x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${m.l - 8}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`;
+    const ya = new Date(x0).getFullYear(), yb = new Date(x1).getFullYear();
+    const every = W < 520 ? 4 : 2;
+    for (let y = ya + 1; y <= yb; y++) if (y % every === 0) {
+      const xx = X(new Date(y, 0, 1)); g += `<text x="${xx}" y="${H - 6}" text-anchor="middle">${y}</text>`;
+    }
+    const lines = series.map((s) => `<path d="${s.pts.map((p, i) => `${i ? "L" : "M"}${X(p.d).toFixed(1)},${Y(p.r).toFixed(1)}`).join("")}" fill="none" stroke="${s.colour}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`).join("");
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", "Rating history for " + series.map((s) => s.name).join(", "));
+    svg.innerHTML = `<g class="axis">${g}</g>${lines}<line id="xh" y1="${m.t}" y2="${H - m.b}" stroke="${css.getPropertyValue("--text-muted")}" stroke-width="1" opacity="0"/><g id="dots"></g><rect x="${m.l}" y="0" width="${W - m.l - m.r}" height="${H}" fill="transparent"/>`;
+    box.insertBefore(svg, tip);
+
+    // crosshair + tooltip
+    const months = [...new Set(all.map((p) => p.mo))].sort();
+    const at = (s, mo) => { let v = null; for (const p of s.pts) { if (p.mo <= mo) v = p; else break; } return v; };
+    const move = (ev) => {
+      const rect = svg.getBoundingClientRect();
+      const px = (ev.clientX - rect.left) / rect.width * W;
+      let best = months[0], bd = Infinity;
+      for (const mo of months) { const d = Math.abs(X(toDate(mo)) - px); if (d < bd) { bd = d; best = mo; } }
+      const xx = X(toDate(best));
+      const xh = svg.querySelector("#xh"); xh.setAttribute("x1", xx); xh.setAttribute("x2", xx); xh.setAttribute("opacity", 1);
+      const vals = series.map((s) => ({ s, p: at(s, best) })).filter((v) => v.p).sort((a, b) => b.p.r - a.p.r);
+      svg.querySelector("#dots").innerHTML = vals.map(({ s, p }) => `<circle cx="${xx}" cy="${Y(p.r)}" r="4.5" fill="${s.colour}" stroke="${css.getPropertyValue("--surface-1")}" stroke-width="2"/>`).join("");
+      tip.innerHTML = `<div class="t">${toDate(best).toLocaleDateString("en-GB", { month: "long", year: "numeric" })}</div>` +
+        vals.map(({ s, p }) => `<div class="r"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${s.colour}"></span>${s.name}<b>${fmt(p.r)}</b></div>`).join("");
+      const tx = xx / W * rect.width;
+      tip.style.left = (tx > rect.width * 0.6 ? tx - tip.offsetWidth - 12 : tx + 12) + "px";
+      tip.style.top = "8px";
+      tip.style.opacity = 1;
+    };
+    const leave = () => { tip.style.opacity = 0; svg.querySelector("#xh").setAttribute("opacity", 0); svg.querySelector("#dots").innerHTML = ""; };
+    svg.addEventListener("pointermove", move);
+    svg.addEventListener("pointerdown", move);
+    svg.addEventListener("pointerleave", leave);
+  }
+
+  // ---------- head to head ----------
+  function initH2H() {
+    const opts = [...S.ratings].sort((a, b) => a.name.localeCompare(b.name)).map((r) => `<option value="${r.id}">${r.name}</option>`).join("");
+    $("pa").innerHTML = opts; $("pb").innerHTML = opts;
+    if (S.byName[DEFAULTS.a]) $("pa").value = S.byName[DEFAULTS.a].id;
+    if (S.byName[DEFAULTS.b]) $("pb").value = S.byName[DEFAULTS.b].id;
+    $("lengths").innerHTML = LENGTHS.map(([n, label]) => `<button type="button" data-n="${n}" aria-pressed="${n === S.len}">${label}</button>`).join("");
+    $("lengths").addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      S.len = +b.dataset.n;
+      $("lengths").querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+      renderH2H();
+    });
+    $("pa").addEventListener("change", renderH2H); $("pb").addEventListener("change", renderH2H);
+    renderH2H();
+  }
+  function renderH2H() {
+    const A = S.byId[$("pa").value], B = S.byId[$("pb").value];
+    if (!A || !B) return;
+    if (A.id === B.id) { $("result").innerHTML = `<p class="note">Pick two different players.</p>`; return; }
+    const pf = pFrame(A.rating, B.rating), pm = pMatch(pf, S.len);
+    const pctA = Math.round(pm * 100), pctB = 100 - pctA;
+    const label = LENGTHS.find(([n]) => n === S.len)[1].toLowerCase();
+    const key = A.id < B.id ? `${A.id}-${B.id}` : `${B.id}-${A.id}`;
+    const rec = S.h2h[key];
+    let h2h = "Not enough history between these two.";
+    if (rec) {
+      const [w1, w2, f1, f2] = A.id < B.id ? rec : [rec[1], rec[0], rec[3], rec[2]];
+      h2h = `${w1}–${w2}`;
+      var frames = `${f1}–${f2}`;
+    }
+    const short = (n) => n.split(" ").slice(-1)[0];
+    $("result").innerHTML = `
+      <div class="names"><span>${A.name}</span><span>${B.name}</span></div>
+      <div class="split" role="img" aria-label="${A.name} ${pctA}%, ${B.name} ${pctB}%">
+        <div class="a" style="flex:${Math.max(pctA, 0.5)}">${pctA >= 12 ? pctA + "%" : ""}</div>
+        <div class="b" style="flex:${Math.max(pctB, 0.5)}">${pctB >= 12 ? pctB + "%" : ""}</div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">${short(A.name)} wins a frame</div><div class="v">${Math.round(pf * 100)}%</div></div>
+        <div class="stat"><div class="k">Head-to-head (matches)</div><div class="v">${rec ? h2h : "–"}</div></div>
+        <div class="stat"><div class="k">Head-to-head (frames)</div><div class="v">${rec ? frames : "–"}</div></div>
+      </div>
+      <p class="note">Over a ${label}, ${A.name} has a <b>${pctA}%</b> chance of beating ${B.name}, based on ratings of ${fmt(A.rating)} and ${fmt(B.rating)}. Head-to-head counts are since ${S.meta.first_season}${rec ? "" : "; these two haven't met often enough in the data"}.</p>`;
+  }
+})();
+</script>
+</body>
+</html>
