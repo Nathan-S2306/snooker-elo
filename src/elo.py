@@ -37,7 +37,7 @@ def match_win_prob(p_frame: float, frames_to_win: int) -> float:
 
 @dataclass
 class FrameElo:
-    k: float = 8.0                 # how fast ratings move
+    k: float = 12.0                # how fast ratings move (tuned on held-out matches)
     scale: float = 400.0           # rating gap that gives 10:1 frame odds
     initial: float = 1500.0        # starting rating for an unknown player
     provisional_matches: int = 20  # new players move faster for their first N matches
@@ -114,9 +114,26 @@ def _round_rank(r) -> int:
         return 50
 
 
+MAX_FRAMES_TO_WIN = 18   # the World final is first to 18; anything higher is a points score
+
+
+def usable(r) -> bool:
+    """Leave out results that aren't frame scores between professionals."""
+    if r.get("walkover", "0") not in ("0", "", "False"):
+        return False
+    if "shoot out" in r.get("event_name", "").lower():          # single frame, scored in points
+        return False
+    if r.get("event_type", "").lower() == "seniors":
+        return False
+    try:
+        return max(int(r["s1"]), int(r["s2"])) <= MAX_FRAMES_TO_WIN
+    except (KeyError, ValueError):
+        return False
+
+
 def load_matches(path: Path):
     with open(path, newline="") as f:
-        rows = [r for r in csv.DictReader(f) if r.get("walkover", "0") in ("0", "", "False")]
+        rows = [r for r in csv.DictReader(f) if usable(r)]
     # date first, then round, so a final is never rated before its semi-finals
     rows.sort(key=lambda r: (r["date"], _round_rank(r.get("round")), r.get("event_id", "")))
     return rows
