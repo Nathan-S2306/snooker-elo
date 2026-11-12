@@ -50065,12 +50065,13 @@ match_id,event_id,event_name,event_type,season,date,round,p1,p2,s1,s2,frames_to_
 10482172,2762,International Championship,Ranking,2026,2026-11-05,14,39,1417,9,6,9,0
 10482173,2762,International Championship,Ranking,2026,2026-11-06,14,237,1981,9,2,9,0
 10482601,2762,International Championship,Ranking,2026,2026-11-07,15,39,237,10,8,10,0
-10484949,2723,Champion of Champions,Invitational,2026,2026-11-09,7,17,21,4,3,4,0
-10484950,2723,Champion of Champions,Invitational,2026,2026-11-09,7,16,1044,1,4,4,0
 10485045,2723,Champion of Champions,Invitational,2026,2026-11-09,13,17,1044,2,6,6,0
-10484951,2723,Champion of Champions,Invitational,2026,2026-11-10,7,154,2533,4,2,4,0
-10484952,2723,Champion of Champions,Invitational,2026,2026-11-10,7,12,90,3,4,4,0
+10488460,2723,Champion of Champions,Invitational,2026,2026-11-09,7,17,21,4,3,4,0
+10488461,2723,Champion of Champions,Invitational,2026,2026-11-09,7,16,1044,1,4,4,0
 10485046,2723,Champion of Champions,Invitational,2026,2026-11-10,13,154,90,6,3,6,0
-10484953,2723,Champion of Champions,Invitational,2026,2026-11-11,7,97,5,4,0,4,0
-10484954,2723,Champion of Champions,Invitational,2026,2026-11-11,7,2469,1981,3,4,4,0
+10488462,2723,Champion of Champions,Invitational,2026,2026-11-10,7,154,2533,4,2,4,0
+10488463,2723,Champion of Champions,Invitational,2026,2026-11-10,7,12,90,3,4,4,0
 10485047,2723,Champion of Champions,Invitational,2026,2026-11-11,13,97,1981,6,0,6,0
+10488464,2723,Champion of Champions,Invitational,2026,2026-11-11,7,97,5,4,0,4,0
+10488465,2723,Champion of Champions,Invitational,2026,2026-11-11,7,2469,1981,3,4,4,0
+10488466,2723,Champion of Champions,Invitational,2026,2026-11-12,7,946,217,4,0,4,0
