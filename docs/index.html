@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Snooker Elo Ratings</title>
+<title>Snooker by Numbers: Ratings</title>
 <meta name="description" content="Frame-based Elo ratings for professional snooker: current ratings, rating history and a head-to-head match predictor. Data from snooker.org.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,7 +75,9 @@ h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 8px 0 10px; le
 .lede { color: var(--text-secondary); max-width: 680px; margin: 0; }
 .meta { margin-top: 14px; font-size: 13px; color: var(--text-muted); }
 .meta a { color: inherit; }
-.credit { margin-top: 4px; font-size: 13px; color: var(--text-secondary); }
+.substack { display: inline-block; margin-top: 14px; background: var(--felt); color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 999px; }
+.substack:hover { filter: brightness(1.1); }
+.credit { margin-top: 12px; font-size: 13px; color: var(--text-secondary); }
 .credit a { color: var(--accent); font-weight: 500; }
 .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-top: 20px; }
 .card h2 { font-size: 18px; margin: 0 0 4px; letter-spacing: -.01em; }
@@ -157,10 +159,11 @@ footer a { color: inherit; }
 <div class="wrap">
   <header>
     <button class="theme" id="themeBtn" type="button" aria-label="Switch light or dark theme">Theme</button>
-    <div class="eyebrow">Snooker Elo</div>
+    <div class="eyebrow">Snooker by Numbers</div>
     <h1>Who's actually the best snooker player right now?</h1>
     <p class="lede">The official rankings are based on two years of prize money, so they lag behind form. These ratings update after every match, using the share of frames won and the strength of the opponent.</p>
     <div class="meta" id="meta">Loading…</div>
+    <a class="substack" href="https://substack.com/@nathanscott126600">Read the articles on Substack →</a>
     <div class="credit">Data from <a href="https://snooker.org">snooker.org</a>, used with permission. Thank you to the snooker.org team for maintaining it.</div>
   </header>
 
@@ -213,6 +216,7 @@ footer a { color: inherit; }
 
   <footer>
     Data from <a href="https://snooker.org">snooker.org</a>, used with permission. Thank you to the snooker.org team.
+    · Articles on <a href="https://substack.com/@nathanscott126600">Substack</a>
     · Code on <a href="https://github.com/Nathan-S2306/snooker-elo">GitHub</a>.
   </footer>
 </div>

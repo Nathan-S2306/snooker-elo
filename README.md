@@ -1,6 +1,6 @@
 # Snooker Elo
 
-**Live dashboard: https://nathan-s2306.github.io/snooker-elo/**
+**Live dashboard: https://nathan-s2306.github.io/snooker-elo/** · **Articles: [Snooker by Numbers](https://substack.com/@nathanscott126600)**
 
 A frame-based rating system for professional snooker, used to rank players on current form and predict tournaments.
 
