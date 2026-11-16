@@ -50077,5 +50077,14 @@ match_id,event_id,event_name,event_type,season,date,round,p1,p2,s1,s2,frames_to_
 10489201,2723,Champion of Champions,Invitational,2026,2026-11-12,7,946,217,4,0,4,0
 10489202,2723,Champion of Champions,Invitational,2026,2026-11-12,7,39,158,4,2,4,0
 10489701,2723,Champion of Champions,Invitational,2026,2026-11-12,13,946,39,1,6,6,0
-10502475,2723,Champion of Champions,Invitational,2026,2026-11-13,14,1044,154,6,2,6,0
-10502476,2723,Champion of Champions,Invitational,2026,2026-11-14,14,97,39,4,6,6,0
+10502606,2723,Champion of Champions,Invitational,2026,2026-11-13,14,1044,154,6,2,6,0
+10502607,2723,Champion of Champions,Invitational,2026,2026-11-14,14,97,39,4,6,6,0
+10503466,2723,Champion of Champions,Invitational,2026,2026-11-15,15,1044,39,8,10,10,0
+10505051,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,2320,131,3,5,5,0
+10505052,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,67,2767,5,2,5,0
+10505053,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,2066,4199,5,1,5,0
+10505054,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,1160,3071,5,0,5,0
+10505055,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,3461,1323,0,5,5,0
+10505056,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,49,2055,3,5,5,0
+10505057,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,4148,552,3,5,5,0
+10505058,2773,German Masters Qualifiers,Qualifying,2026,2026-11-16,1,680,1893,0,5,5,0
